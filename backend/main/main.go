@@ -42,6 +42,6 @@ func main() {
 	permissionString := SetPermissions(permissions)
 	fmt.Println(permissionString)
 
-	GetSitemap("https://openai.com/sitemap.xml")
+	GetSitemap("https://sidnarsipur.github.io/sitemap.xml")
 
 }

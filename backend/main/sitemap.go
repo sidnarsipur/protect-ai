@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/yterajima/go-sitemap"
 )
 
@@ -22,6 +24,10 @@ func GetSitemap(url string) {
 	sitemap, err := sitemap.Get(url, nil)
 	if err != nil {
 		panic(err)
+	}
+
+	for _, url := range sitemap.URL {
+		fmt.Println(url.Loc)
 	}
 
 	BuildDirectory(sitemap)
