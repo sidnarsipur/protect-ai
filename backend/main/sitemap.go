@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/yterajima/go-sitemap"
@@ -22,8 +21,6 @@ func GetDirectory(url string) map[string][]string {
 
 func BuildDirectory(sitemap sitemap.Sitemap) map[string][]string {
 	directory := make(map[string][]string)
-
-	fmt.Println(root + "\n")
 
 	for _, url := range sitemap.URL {
 		path := strings.TrimPrefix(url.Loc, root)

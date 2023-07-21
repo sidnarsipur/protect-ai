@@ -1,2 +1,2 @@
 run: 
-	cd main && go run -mod=vendor *.go
+	cd main; go run -mod=vendor *.go
