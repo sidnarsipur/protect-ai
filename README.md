@@ -6,7 +6,9 @@ Protect AI blocks unauthorized web crawlers from accessing pages and files on yo
 Installation
 ==============
 
-Coming soon!
+Package Coming soon!
+
+For now - clone (or download) the repo and see the commands below.
 
 Usage
 ===========
