@@ -1,27 +1,19 @@
+User-Agent: * 
+Disallow: / 
 
 User-Agent: Googlebot
 Allow: /
-Disallow: /
+Disallow: /*.pdf$
 Disallow: /*.jpg$
-Disallow: /*.txt$
 
 User-Agent: Bingbot
 Allow: /
-Disallow: /
+Disallow: /*.pdf$
 Disallow: /*.jpg$
-Disallow: /*.txt$
 
 User-Agent: msnbot
 Allow: /
-Disallow: /
+Disallow: /*.pdf$
 Disallow: /*.jpg$
-Disallow: /*.txt$
 
-User-Agent: FJFJ
-Allow: /
-Disallow: /
-Disallow: /*.jpg$
-Disallow: /*.txt$
-
-User-Agent: ChatGPTBot
-Disallow: /
+Sitemap: www.hello.xml

@@ -6,7 +6,7 @@ import sys
 
 import csv
 
-doc = """Usage: protect.py SITEMAP [--seo-allowed] [--blockAll=False] [--allowCrawler=Crawlers] [--disallowCrawler=Crawlers] [--allowFile=FileTypes] [--disallowFile=FileTypes] [--disallowDir=FileTypes]
+doc = """Usage: protect.py SITEMAP [--seoAllowed] [--blockAll] [--allowCrawler=Crawlers] [--disallowCrawler=Crawlers] [--allowFile=FileTypes] [--disallowFile=FileTypes] [--disallowDir=FileTypes]
 """
 
 blockAll = ['User-Agent: * \n', 'Disallow: / \n']
@@ -54,7 +54,7 @@ def get_crawler_string(crawler='', d_dirs=[], a_files=[], d_files=[], type=''):
   if type == 'seo' or type == 'allow':
     lines.append('Allow: /' + '\n')
 
-  if not d_dirs:
+  elif not d_dirs:
     lines.append('Disallow: /' + '\n')
 
   for dirc in d_dirs:
@@ -74,10 +74,12 @@ def write_robot(args, crawlers):
   seo_crawlers = get_seo_crawlers(crawlers)
 
   with open("robots.txt", "w+") as robot:
-    if args['--blockAll'] == False:
+    if args['--blockAll']:
       robot.writelines(blockAll)
+    else:
+      robot.writelines(get_crawler_string("*", d_dirs, [], d_files, 'allow'))
 
-    if args['--seo-allowed']:
+    if args['--seoAllowed']:
       for crawler in crawlers:
         if crawler['User-Agent'] in seo_crawlers:
           robot.writelines(get_crawler_string(crawler['User-Agent'], d_dirs, a_files, d_files, 'seo'))
@@ -87,6 +89,8 @@ def write_robot(args, crawlers):
     
     for crawler in d_crawlers:
       robot.writelines(get_crawler_string(crawler))
+    
+    robot.writelines('\nSitemap: ' + sitemap)
 
 if __name__ == '__main__':
   args = docopt(doc, help=False)
