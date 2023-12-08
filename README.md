@@ -16,9 +16,9 @@ Usage
 **Options**:
 
 - `SITEMAP`: Path to your website's sitemap file.
-- `--allowSEO`: (Optional, Default=false) Set to true to allow SEO crawlers access.
+- `--allowSEO`: (Optional, Default=false) Set to true to allow search engine (Google, Bing) crawlers access.
 - `--blockAll`: (Optional, Default=false) Block all crawlers except those explicitly allowed.
-- - `--blockTraining`: (Optional, Default=false) Block crawlers known to use data for model training.
+- `--blockTraining`: (Optional, Default=false) Block crawlers known to use data for model training (OpenAI etc.).
 - `--allowCrawler`: (Optional) List of crawler names to allow access.
 - `--disallowCrawler`: (Optional) List of crawler names to deny access. Recommended if `blockAll` is false.
 - `--allowFile`: (Optional) List of file extensions to allow access.
