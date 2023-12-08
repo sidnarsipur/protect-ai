@@ -11,13 +11,14 @@ Coming soon!
 Usage
 ===========
 
-`protect.py SITEMAP [--seoAllowed] [--blockAll] [--allowCrawler=Crawlers] [--disallowCrawler=Crawlers] [--allowFile=FileTypes] [--disallowFile=FileTypes] [--disallowDir=FileTypes]`
+`protect.py SITEMAP [--allowSEO] [--blockAll] [--blockTraining] [--allowCrawler=Crawlers] [--disallowCrawler=Crawlers] [--allowFile=FileTypes] [--disallowFile=FileTypes] [--disallowDir=FileTypes]`
 
 **Options**:
 
 - `SITEMAP`: Path to your website's sitemap file.
-- `--seoAllowed`: (Optional, Default=false) Set to true to allow SEO crawlers access.
+- `--allowSEO`: (Optional, Default=false) Set to true to allow SEO crawlers access.
 - `--blockAll`: (Optional, Default=false) Block all crawlers except those explicitly allowed.
+- - `--blockTraining`: (Optional, Default=false) Block crawlers known to use data for model training.
 - `--allowCrawler`: (Optional) List of crawler names to allow access.
 - `--disallowCrawler`: (Optional) List of crawler names to deny access. Recommended if `blockAll` is false.
 - `--allowFile`: (Optional) List of file extensions to allow access.
@@ -37,11 +38,11 @@ Example
 
 - Block all crawlers but allow msnbot, DiscordBot and seo crawlers:
 
-`protect.py my_sitemap.xml --seoAllowed --blockAll --allowCrawler=msnbot,DiscordBot`
+`protect.py my_sitemap.xml --allowSEO --blockAll --allowCrawler=msnbot,DiscordBot`
 
 - Block all crawlers but allow msnbot, DiscordBot and seo crawlers but block the pics/ directory:
 
-`protect.py my_sitemap.xml --seoAllowed --blockAll --allowCrawler=msnbot,DiscordBot --disallowDir=pics/`
+`protect.py my_sitemap.xml --allowSEO --blockAll --allowCrawler=msnbot,DiscordBot --disallowDir=pics/`
 
 - Allow all crawlers access to all files except PDF and JPG files:
 
@@ -49,5 +50,9 @@ Example
 
 - Allow only SEO crawlers
 
-`python3 Protect.py www.hello.xml --blockAll --seoAllowed`
+`python3 Protect.py www.hello.xml --blockAll --allowSEO`
+
+- Block only training crawlers
+
+`python3 Protect.py www.hello.xml --blockTraining`
 
