@@ -1,7 +1,7 @@
 About
 ==========
 
-Protect AI blocks unauthorized web crawlers from accessing pages and files on your website by generating a custom [robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt) file. 
+Block unauthorized web crawlers from accessing pages and files on your website by generating a custom [robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt) file. 
 
 Installation
 ==============
