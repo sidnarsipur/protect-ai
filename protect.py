@@ -1,9 +1,7 @@
 from docopt import docopt
-
 from logging import error
 
 import sys
-
 import csv
 
 doc = """Usage: protect.py SITEMAP [--allowSEO] [--blockAll] [--blockTraining] [--allowCrawler=Crawlers] [--disallowCrawler=Crawlers] [--allowFile=FileTypes] [--disallowFile=FileTypes] [--disallowDir=FileTypes]
